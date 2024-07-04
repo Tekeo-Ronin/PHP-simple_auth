@@ -19,7 +19,7 @@ require_once __DIR__ . '/boot.php';
         </div>
         <?php flash() ?>
         <div class="row">
-            <form action="do_register.php" action="post">
+            <form action="do_register.php" method="post">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username" required>
