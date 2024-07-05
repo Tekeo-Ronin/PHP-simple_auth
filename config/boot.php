@@ -8,7 +8,7 @@ function pdo(): PDO
   static $pdo;
 
   if (!$pdo) {
-    $config = include __DIR__ . '/config.php';
+    $config = include __DIR__ . './config.php';
 
     // підключаємо бд
     $dsn = 'mysql:dbname=' . $config['db_name'] . ';host=' . $config['db_host'];

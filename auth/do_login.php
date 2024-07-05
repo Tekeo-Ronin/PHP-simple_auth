@@ -1,13 +1,13 @@
 <?php
 
-require_once __DIR__ . "/boot.php";
+require_once __DIR__ . "../config/boot.php";
 
 $stmt = pdo()->prepare("SELECT * FROM `users` WHERE `username` = :username");
 $stmt->execute(['username' => $_POST['username']]);
 
 if (!$stmt->rowCount()) {
     flash('User with this name dont exist');
-    header('Location: login.php');
+    header('Location: ../pages/login.php');
     die;
 }
 
@@ -30,4 +30,4 @@ if (password_verify($_POST['password'], $user['password'])) {
 }
 
 flash('Password is wrong');
-header('Location: login.php');
+header('Location: ../pages/login.php');

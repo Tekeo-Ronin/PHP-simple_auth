@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/boot.php';
+require_once __DIR__ . './config/boot.php';
 
 $user = null;
 
@@ -25,7 +25,7 @@ if (check_auth()) {
         <?php if ($user) { ?>
             <h1>Welcome back, <?= htmlspecialchars($user['username']) ?>!</h1>
 
-            <form action="do_logout.php" method="post" class="mt-5">
+            <form action="./auth/do_logout.php" method="post" class="mt-5">
                 <button type="submit" class="btn btn-primary">Logout</button>
             </form>
 
@@ -35,7 +35,7 @@ if (check_auth()) {
             </div>
             <?php flash() ?>
             <div class="row">
-                <form action="do_register.php" method="post">
+                <form action="./auth/do_register.php" method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" id="username" name="username" required>
@@ -46,7 +46,7 @@ if (check_auth()) {
                     </div>
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary">Register</button>
-                        <a class="btn btn-outline-primary" href="login.php">Login</a>
+                        <a class="btn btn-outline-primary" href="./pages/login.php">Login</a>
                     </div>
                 </form>
             </div>

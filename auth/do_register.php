@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/boot.php";
+require_once __DIR__ . "../config/boot.php";
 
 // перевірка на існування користувача
 
@@ -18,4 +18,4 @@ $stmt->execute([
     'password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
 ]);
 
-header('Location: login.php');
+header('Location: ../pages/login.php');

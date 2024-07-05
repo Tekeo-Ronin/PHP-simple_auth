@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/boot.php";
+require_once __DIR__ . "../config/boot.php";
 
 if (check_auth()) {
     header('Location: /');
@@ -25,7 +25,7 @@ if (check_auth()) {
         </div>
         <?php flash() ?>
         <div class="row">
-            <form method="post" action="do_login.php">
+            <form method="post" action="../auth/do_login.php">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" id="username" name="username" class="form-control" required>
@@ -36,7 +36,7 @@ if (check_auth()) {
                 </div>
                 <div class="d-flex justify-content-between">
                     <button type="submit" class="btn btn-primary">Login</button>
-                    <a href="index.php" class="btn btn-outline-primary">Register</a>
+                    <a href="../index.php" class="btn btn-outline-primary">Register</a>
                 </div>
             </form>
         </div>
